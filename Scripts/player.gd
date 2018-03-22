@@ -1,10 +1,15 @@
 extends KinematicBody2D
 
 var VELOCITY = 2
+var POWER = 740
 
 func _physics_process(delta):
 	_move_player()
-    
+	_update_power()
+
+func _update_power():
+	POWER = POWER + 5
+	
 func _move_player():
 	var horizontal_movement = 0
 	var vertical_movement = 0

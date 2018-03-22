@@ -1,8 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Graphics/tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://simple_movement.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Objects/tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Scripts/simple_movement.gd" type="Script" id=2]
+[ext_resource path="res://Graphics/icon.png" type="Texture" id=3]
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

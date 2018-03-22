@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var VELOCITY = 2
-var POWER = 740
+var POWER = 750
 
 func _physics_process(delta):
 	_move_player()
@@ -9,6 +9,8 @@ func _physics_process(delta):
 
 func _update_power():
 	POWER = POWER + 5
+	if POWER <= 9000:
+		VELOCITY = VELOCITY + 0.001
 	
 func _move_player():
 	var horizontal_movement = 0
@@ -26,8 +28,8 @@ func _move_player():
 		vertical_movement = 1
     
 	if horizontal_movement * horizontal_movement == vertical_movement * vertical_movement:
-		horizontal_movement = horizontal_movement /1.4142
-		vertical_movement = vertical_movement /1.4142
+		horizontal_movement = horizontal_movement /1.4143
+		vertical_movement = vertical_movement /1.4143
 
 	movement_vector = Vector2(horizontal_movement*VELOCITY,vertical_movement*VELOCITY)
 	move_and_collide(movement_vector)

@@ -3,11 +3,16 @@ extends KinematicBody2D
 var VELOCITY = 2
 var POWER = 750
 
+var ROTATION_ANGLE = 0
+
 func _physics_process(delta):
-	_move_player()
+	var vector = _move_player()
+	_update_player_texture(vector)
+	
 	_update_power()
 
 func _update_power():
+	#TODO: create proper updating algorithm
 	POWER = POWER + 5
 	if POWER <= 9000:
 		VELOCITY = VELOCITY + 0.001
@@ -33,3 +38,11 @@ func _move_player():
 
 	movement_vector = Vector2(horizontal_movement*VELOCITY,vertical_movement*VELOCITY)
 	move_and_collide(movement_vector)
+	return movement_vector
+	
+func _update_player_texture(vector):
+	if vector.x == 0 && vector.y == 0:
+		return
+	var angle = atan2(deg2rad(vector.x),-deg2rad(vector.y))
+	rotate(angle - ROTATION_ANGLE)
+	ROTATION_ANGLE = angle

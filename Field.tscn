@@ -5,7 +5,7 @@
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/GUI_camera.tscn" type="PackedScene" id=4]
 
-[node name="Tileset" type="Node2D" index="0"]
+[node name="Tileset" type="Node2D"]
 
 self_modulate = Color( 0, 0, 0, 1 )
 scale = Vector2( 0.5, 0.5 )

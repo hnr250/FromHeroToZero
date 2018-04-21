@@ -10,7 +10,7 @@ source_file="res://Graphics/2dpixx_dungeon.png"
 source_md5="77b9f7179a011b6c5ba7bb7a7589a241"
 
 dest_files=[ "res://.import/2dpixx_dungeon.png-a8de38c271c472c23010a2956c5ae0c4.stex" ]
-dest_md5="5d2233ed0dfaa2f7a702ce14c909586d"
+dest_md5="ba3faac51506f9477ed90f03af845d3d"
 
 [params]
 
@@ -19,11 +19,11 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false

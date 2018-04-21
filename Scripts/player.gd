@@ -55,4 +55,7 @@ func checkCollision(collision):
 		if(collider.is_in_group("enemy")):
 			POWER = POWER - collider.POWER
 			collider.queue_free()
+		if(collider.is_in_group("pickup")):
+			POWER = POWER + collider.POWER_MODIFIER
+			collider.do_collide()
 			

@@ -1,22 +1,13 @@
 extends KinematicBody2D
 
-var VELOCITY = 2
-var POWER = 750
+var STATS = {"power": 750, "velocity":2}
 
 var ROTATION_ANGLE = 0
 
 func _physics_process(delta):
 	var vector = _move_player()
 	_update_player_texture(vector)
-	
-	_update_power()
 
-func _update_power():
-	#TODO: create proper updating algorithm
-	POWER = POWER + 5
-	if POWER <= 9000:
-		VELOCITY = VELOCITY + 0.001
-	
 func _move_player():
 	var horizontal_movement = 0
 	var vertical_movement = 0
@@ -36,7 +27,7 @@ func _move_player():
 		horizontal_movement = horizontal_movement /1.4143
 		vertical_movement = vertical_movement /1.4143
 
-	movement_vector = Vector2(horizontal_movement*VELOCITY,vertical_movement*VELOCITY)
+	movement_vector = Vector2(horizontal_movement*STATS.velocity,vertical_movement*STATS.velocity)
 	var collision = move_and_collide(movement_vector)
 	checkCollision(collision)
 			
@@ -53,9 +44,7 @@ func checkCollision(collision):
 	if(collision):
 		var collider = collision.collider
 		if(collider.is_in_group("enemy")):
-			POWER = POWER - collider.POWER
-			collider.queue_free()
+			STATS = collider.do_collide(STATS)
 		if(collider.is_in_group("pickup")):
-			POWER = POWER + collider.POWER_MODIFIER
-			collider.do_collide()
+			STATS = collider.do_collide(STATS)
 			

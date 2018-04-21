@@ -3,16 +3,13 @@
 [ext_resource path="res://Scripts/unknownPickup.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/QuestionBlock.png" type="Texture" id=2]
 
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
 [node name="unknownPickup" type="StaticBody2D"]
 
-position = Vector2( 400, 600 )
-scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -25,13 +22,14 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-scale = Vector2( 12, 12 )
-shape = SubResource( 2 )
+scale = Vector2( 3, 3 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 

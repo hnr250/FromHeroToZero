@@ -37,7 +37,9 @@ func _move_player():
 		vertical_movement = vertical_movement /1.4143
 
 	movement_vector = Vector2(horizontal_movement*VELOCITY,vertical_movement*VELOCITY)
-	move_and_collide(movement_vector)
+	var collision = move_and_collide(movement_vector)
+	checkCollision(collision)
+			
 	return movement_vector
 	
 func _update_player_texture(vector):
@@ -46,3 +48,11 @@ func _update_player_texture(vector):
 	var angle = atan2(deg2rad(vector.x),-deg2rad(vector.y))
 	rotate(angle - ROTATION_ANGLE)
 	ROTATION_ANGLE = angle
+	
+func checkCollision(collision):
+	if(collision):
+		var collider = collision.collider
+		if(collider.is_in_group("enemy")):
+			POWER = POWER - collider.POWER
+			collider.queue_free()
+			

@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Objects/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/GUI_camera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/MeleeEnemy.gd" type="Script" id=5]
+[ext_resource path="res://Graphics/slime.png" type="Texture" id=6]
 
-[node name="Tileset" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Tileset" type="Node2D" index="0"]
 
 self_modulate = Color( 0, 0, 0, 1 )
 scale = Vector2( 0.5, 0.5 )
@@ -70,5 +77,30 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Grow Direction", "Rect" ]
+
+[node name="enemy" type="KinematicBody2D" parent="." index="3" groups=[
+"enemy",
+]]
+
+position = Vector2( 487.055, 246.711 )
+scale = Vector2( 2, 2 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="enemy" index="0"]
+
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 32, 0, 32, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy" index="1"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 

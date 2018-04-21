@@ -6,7 +6,7 @@
 [ext_resource path="res://Objects/GUI_camera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/MeleeEnemy.gd" type="Script" id=5]
 [ext_resource path="res://Graphics/slime.png" type="Texture" id=6]
-[ext_resource path="res://unknownPickup.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/unknownPickup.gd" type="Script" id=7]
 [ext_resource path="res://Graphics/QuestionBlock.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]

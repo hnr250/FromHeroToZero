@@ -12,7 +12,7 @@ func _ready():
 func _physics_process(delta):
 	var vector = _move_player()
 	_update_player_texture(vector)
-	_process_powers()
+	#_process_powers()
 
 func _move_player():
 	var horizontal_movement = 0

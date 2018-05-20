@@ -3,10 +3,13 @@ extends KinematicBody2D
 var STATS = {"power": 5000, "velocity":2}
 
 var ROTATION_ANGLE = 0
+var SPINBALL_ENABLED = true
+var FIREBALL = preload("res://Objects/Fireball.tscn")
 
 func _physics_process(delta):
 	var vector = _move_player()
 	_update_player_texture(vector)
+	_process_powers()
 
 func _move_player():
 	var horizontal_movement = 0
@@ -48,3 +51,12 @@ func checkCollision(collision):
 		if(collider.is_in_group("pickup")):
 			STATS = collider.do_collide(STATS)
 			
+#func _process_powers():
+#	if STATS.power >7000: #fireballs
+#		var fireball = FIREBALL.instance()
+#		get_parent().add_child(fireball)
+#		fireball.set_pos(get_node("Node2D").get_global_pos())
+#	if STATS.power >4000: #enable spinball
+#		SPINBALL_ENABLED = true
+#	if STATS.power < 4000: #disable spinball	
+#		SPINBALL_ENABLED = false

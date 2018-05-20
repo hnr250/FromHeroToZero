@@ -6,6 +6,9 @@ var ROTATION_ANGLE = 0
 var SPINBALL_ENABLED = true
 var FIREBALL = preload("res://Objects/Fireball.tscn")
 
+func _ready():
+	add_to_group("player")
+
 func _physics_process(delta):
 	var vector = _move_player()
 	_update_player_texture(vector)

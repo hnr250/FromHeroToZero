@@ -24,7 +24,7 @@ _sections_unfolded = [ "Collision", "Transform", "collision" ]
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 32, 0, 32, 32 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 

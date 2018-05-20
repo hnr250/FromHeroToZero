@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var POWER = 1000;
+var POWER = -1000;
 var VELOCITY = 2;
 var is_enemy = true;
 var PLAYER_POWER_THRESHOLD = 1000

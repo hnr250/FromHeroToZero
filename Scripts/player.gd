@@ -4,6 +4,9 @@ var STATS = {"power": 750, "velocity":2}
 
 var ROTATION_ANGLE = 0
 
+func _ready():
+	add_to_group("player")
+
 func _physics_process(delta):
 	var vector = _move_player()
 	_update_player_texture(vector)

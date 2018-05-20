@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var STATS = {"power": 750, "velocity":2}
+var STATS = {"power": 5000, "velocity":2}
 
 var ROTATION_ANGLE = 0
 

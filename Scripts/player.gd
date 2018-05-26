@@ -12,7 +12,7 @@ func _ready():
 func _physics_process(delta):
 	var vector = _move_player()
 	_update_player_texture(vector)
-	#_process_powers()
+	_process_powers()
 
 func _move_player():
 	var horizontal_movement = 0
@@ -54,11 +54,11 @@ func checkCollision(collision):
 		if(collider.is_in_group("pickup")):
 			STATS = collider.do_collide(STATS)
 			
-#func _process_powers():
-#	if STATS.power >7000: #fireballs
-#		var fireball = FIREBALL.instance()
-#		get_parent().add_child(fireball)
-#		fireball.set_pos(get_node("Node2D").get_global_pos())
+func _process_powers():
+	if STATS.power >7000: #fireballs
+		var fireball = FIREBALL.instance()
+		get_parent().add_child(fireball)
+		fireball.global_position = global_position
 #	if STATS.power >4000: #enable spinball
 #		SPINBALL_ENABLED = true
 #	if STATS.power < 4000: #disable spinball	

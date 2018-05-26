@@ -4,6 +4,8 @@ var STATS = {"power": 5000, "velocity":2}
 
 var ROTATION_ANGLE = 0
 var SPINBALL_ENABLED = true
+var timeout = 1
+var timer = 0
 var FIREBALL = preload("res://Objects/Fireball.tscn")
 
 func _ready():
@@ -12,7 +14,10 @@ func _ready():
 func _physics_process(delta):
 	var vector = _move_player()
 	_update_player_texture(vector)
-	_process_powers()
+	timer+=delta
+	if(timer>timeout):
+		_process_powers()
+		timer = 0
 
 func _move_player():
 	var horizontal_movement = 0
@@ -57,8 +62,22 @@ func checkCollision(collision):
 func _process_powers():
 	if STATS.power >7000: #fireballs
 		var fireball = FIREBALL.instance()
+		var fireball_w = FIREBALL.instance()
+		fireball_w.speed_x = -1
+		var fireball_n = FIREBALL.instance()
+		fireball_n.speed_x = 0
+		fireball_n.speed_y = 1
+		var fireball_s = FIREBALL.instance()
+		fireball_s.speed_x = 0
+		fireball_s.speed_y = -1
 		get_parent().add_child(fireball)
+		get_parent().add_child(fireball_w)
+		get_parent().add_child(fireball_n)
+		get_parent().add_child(fireball_s)
 		fireball.global_position = global_position
+		fireball_w.global_position = global_position
+		fireball_n.global_position = global_position
+		fireball_s.global_position = global_position
 #	if STATS.power >4000: #enable spinball
 #		SPINBALL_ENABLED = true
 #	if STATS.power < 4000: #disable spinball	

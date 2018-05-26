@@ -60,16 +60,19 @@ func checkCollision(collision):
 			STATS = collider.do_collide(STATS)
 			
 func _process_powers():
-	if STATS.power >7000: #fireballs
+	if STATS.power >5500: #fireballs
 		var fireball = FIREBALL.instance()
+		fireball.global_rotation_degrees = 180
 		var fireball_w = FIREBALL.instance()
 		fireball_w.speed_x = -1
 		var fireball_n = FIREBALL.instance()
 		fireball_n.speed_x = 0
 		fireball_n.speed_y = 1
+		fireball_n.global_rotation_degrees = 270
 		var fireball_s = FIREBALL.instance()
 		fireball_s.speed_x = 0
 		fireball_s.speed_y = -1
+		fireball_s.global_rotation_degrees = 90
 		get_parent().add_child(fireball)
 		get_parent().add_child(fireball_w)
 		get_parent().add_child(fireball_n)

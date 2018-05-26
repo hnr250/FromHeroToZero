@@ -3,9 +3,11 @@ extends Area2D
 var timer = 0
 var timeout = 1
 var enemies = 0
-var max_enemites = 15
+var max_enemites = 12
 var pickups = 0
-var max_pickups = 15
+var max_pickups = 10
+var traps = 0
+var max_traps = 5
 var enemy_object = load("res://Objects/enemy.tscn")
 var pickup_object = load("res://Objects/unknownPickup.tscn")
 var trap_object = load("res://Objects/trap.tscn")
@@ -30,11 +32,11 @@ func _physics_process(delta):
 			$"../Pickups".add_child(new_pickup)
 			pickups = pickups + 1
 			timer = 0
-		if what_to_spawn == 2 && pickups < max_pickups:
+		if what_to_spawn == 2 && traps < max_traps:
 			var new_pickup = trap_object.instance()
 			new_pickup.position = get_random_spawn_position()
 			$"../Pickups".add_child(new_pickup)
-			pickups = pickups + 1
+			traps = traps + 1
 			timer = 0
 	
 func get_random_spawn_position():

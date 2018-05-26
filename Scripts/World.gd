@@ -25,7 +25,8 @@ func _update_GUI():
 
 func _get_power_text(player):
 	var POWER = player.STATS.power
+	var VELOCITY = player.STATS.velocity
 	if POWER <= 9000:
-		return "POWER: " + str(POWER)
+		return "POWER: " + str(POWER) + "\nVELOCITY: " + str(VELOCITY)
 	else:
 		return "POWER: 9000+"

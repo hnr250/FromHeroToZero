@@ -3,11 +3,16 @@ extends KinematicBody2D
 var POWER = -1000;
 var VELOCITY = 2;
 var is_enemy = true;
-var PLAYER_POWER_THRESHOLD = 1000
+var PLAYER_POWER_THRESHOLD = 5000
 
 
 func _ready():
-	pass
+	randomize()
+	_generate_stats()
+	
+func _generate_stats():	
+	POWER = -100 * (1 + randi() % 5)
+	VELOCITY = rand_range(0.5, 2.5)
 
 func do_collide(player):
 	#update stats
@@ -29,7 +34,7 @@ func _move_enemy():
 	var player = get_tree().get_root().get_node("Tileset/player")
 	var power = player.STATS.power
 	var player_position = player.get_global_position()
-	if power > PLAYER_POWER_THRESHOLD:
+	if power < PLAYER_POWER_THRESHOLD:
 		return _get_closer_position(player_position)
 	else:
 		return _get_further_position(player_position)

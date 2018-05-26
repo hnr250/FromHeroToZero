@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 var POWER_MODIFIER = 1000
-var VELOCITY_MODIFIER = 0.5
+var VELOCITY_MODIFIER = 0.7
 
 func _ready():
 	add_to_group("pickup");

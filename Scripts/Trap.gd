@@ -5,7 +5,7 @@ var VELOCITY_MODIFIER = 0.1
 
 func _ready():
 	randomize()
-	add_to_group("pickup");
+	add_to_group("trap");
 	_generate_stats()
 	
 func _generate_stats():	

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FireballCollision.wav-3efbc321757e8864e99a551e4c32db26.sample"
+
+[deps]
+
+source_file="res://Sounds/FireballCollision.wav"
+source_md5="a5b04adafa56f10ee70bf7d95ee1b7ce"
+
+dest_files=[ "res://.import/FireballCollision.wav-3efbc321757e8864e99a551e4c32db26.sample" ]
+dest_md5="ff417ecaf55c5f1df5a1c4fa815d1f6a"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -55,12 +55,18 @@ func checkCollision(collision):
 	if(collision):
 		var collider = collision.collider
 		if(collider.is_in_group("enemy")):
+			get_node("enemy_sound").play()
 			STATS = collider.do_collide(STATS)
 		if(collider.is_in_group("pickup")):
+			get_node("pickup_sound").play()
+			STATS = collider.do_collide(STATS)
+		if(collider.is_in_group("trap")):
+			get_node("trap_sound").play()
 			STATS = collider.do_collide(STATS)
 			
 func _process_powers():
 	if STATS.power >7000: #fireballs
+		get_node("fireball_sound").play()
 		var fireball = FIREBALL.instance()
 		var fireball_w = FIREBALL.instance()
 		fireball_w.speed_x = -1

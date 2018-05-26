@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/over9000.swf.wav-3caf8e4e1c1fbbad9709adff40502429.sample"
+
+[deps]
+
+source_file="res://Sounds/over9000.swf.wav"
+source_md5="d954ca4de4ff7ef90af023124528235c"
+
+dest_files=[ "res://.import/over9000.swf.wav-3caf8e4e1c1fbbad9709adff40502429.sample" ]
+dest_md5="01b0b9892831e6327dd5d9fca8db58ed"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="enemy" type="KinematicBody2D" index="0"]
+[node name="enemy" type="KinematicBody2D"]
 
 position = Vector2( 487.055, 246.711 )
 scale = Vector2( 2, 2 )

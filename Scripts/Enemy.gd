@@ -28,7 +28,6 @@ func do_collide(player):
 func _physics_process(delta):
 	var movement_vector = _move_enemy()
 	var collision = move_and_collide(movement_vector)
-	_check_collision(collision)
 	
 func _move_enemy():
 	var player = get_tree().get_root().get_node("Tileset/player")
@@ -72,6 +71,6 @@ func _get_further_position(player_position):
 func _check_collision(collision):
 	if(collision):
 		var collider = collision.collider
-		if(collider.is_in_group("player")):
+		if(collider.is_in_group("player")):		
 			do_collide(collider.STATS)
 

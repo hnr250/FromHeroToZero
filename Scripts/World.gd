@@ -10,11 +10,13 @@ func _process(delta):
 	_update_GUI()
 	
 	if player.STATS.power > 10000:
-		label.text = "GAME OVER - TOO POWERFUL TO HANDLE"
+		label.text = "GAME OVER - TOO POWERFUL TO HANDLE" + "\nPRESS R TO RESTART"
 		get_tree().paused = true
 	if player.STATS.power < 0:
-		label.text = "ZERO REACHED - YOU WIN!"
+		label.text = "ZERO REACHED - YOU WIN!" + "\nPRESS R TO RESTART"
 		get_tree().paused = true
+		
+	
 	
 func _update_GUI():
 	#var player = get_node("player")
@@ -29,4 +31,4 @@ func _get_power_text(player):
 	if POWER <= 9000:
 		return "POWER: " + str(POWER) + "\nVELOCITY: " + str(VELOCITY)
 	else:
-		return "POWER: 9000+"
+		return "POWER: 9000+" + "\nVELOCITY: " + str(VELOCITY)

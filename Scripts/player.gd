@@ -23,6 +23,7 @@ func _move_player():
 	var horizontal_movement = 0
 	var vertical_movement = 0
 	var movement_vector = Vector2(0,0)
+	
 
 	if Input.is_action_pressed("ui_left"):
 		horizontal_movement = -1
